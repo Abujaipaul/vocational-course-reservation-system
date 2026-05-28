@@ -8,7 +8,7 @@ This project bypasses traditional React `useState` prop-drilling by leveraging a
 * **Frontend:** React 18
 * **State Management:** Zustand (Handling multiple array states simultaneously)
 * **Styling:** Vanilla CSS (Flexbox layout architecture)
-* **Formatting:** Native `Intl.NumberFormat` for automated Nigerian Naira (₦) localization
+* **Formatting:** Native `Intl.NumberFormat` for automated Nigerian Naira (₦) localization.
 
 ##  Core Engineering Features
 * **Dual-Array State Management:** Manages both a `courses` inventory array and a `cart` array within a single global vault.
