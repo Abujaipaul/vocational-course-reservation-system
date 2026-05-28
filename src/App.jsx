@@ -40,6 +40,7 @@ function App() {
                         <span>{item.title}</span>
                          ----------
                         <span>{format(item.price)}</span>
+                        <button style={{color : 'red'}}>Delete</button>
                       </li>
 
                        </div>
