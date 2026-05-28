@@ -17,7 +17,7 @@ This project bypasses traditional React `useState` prop-drilling by leveraging a
 * **Unique Cart Indexing:** Leverages timestamp IDs (`Date.now()`) to ensure duplicate course selections are handled correctly within the React virtual DOM.
 
 ##  How to Run Locally
-1. Clone the repository: `git clone <your-repo-link>`
+1. Clone the repository: `git clone <https://github.com/Abujaipaul/vocational-course-reservation-system.git>`
 2. Install dependencies: `npm install`
 3. Start the local server: `npm run dev`
 
