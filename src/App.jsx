@@ -4,7 +4,7 @@ import { useCartStore } from './useCartStore'
 
 function App() {
 
-  const {courses, reserveSeat, cart} = useCartStore()
+  const {courses, reserveSeat, cart, handleRemove} = useCartStore()
 
     function format (value){
     return new Intl.NumberFormat("en-NG", {
@@ -19,6 +19,20 @@ function App() {
          }, 0)
 
   console.log(cart)
+
+  //  function handleRemove(itemId){
+
+  //   let cartItems = cart.filter((data) => {
+  //     if(data.id != itemId){
+  //        return {data}
+  //     }
+  //   })
+      
+  //   cartItems = [cartItems, ...cart]
+
+  //   console.log(cartItems)
+  //  }
+
 
   return (
     <>
@@ -35,16 +49,15 @@ function App() {
                 cart.map((item) => {
             
                   return (
-                      <div key={item.id}>
+                      <div key={item.cartId}>
                         <li >
                         <span>{item.title}</span>
                          ----------
                         <span>{format(item.price)}</span>
-                        <button style={{color : 'red'}}>Delete</button>
+                        <button style={{color : 'red'}} onClick={() => handleRemove(item.cartId)}>Delete</button>
                       </li>
 
-                       </div>
-                      
+                       </div>    
                   )
                 })
                }

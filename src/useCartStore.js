@@ -35,10 +35,38 @@ export const useCartStore = create(function (set) {
 
             return {
                 courses : updatedCourses,
-                cart : [{ ...addToCart, id: Date.now() }, ...state.cart]
+                cart : [{ ...addToCart, cartId: Date.now() }, ...state.cart]
             }
         })
-       }
+       },
+       
+      handleRemove : function(itemId) {
+       set(function(state) {
+          const itemToBeRemoved = state.cart.find(item => item.cartId === itemId) //use .find to get the item to be removed from the cart
+        //   const itemToBeRemoved = state.cart.filter(item => item.cartId === itemId) //use .filter to get the item to be removed from the cart
+          const filteredItems = state.cart.filter(item => item.cartId !== itemId)
+
+          console.log(itemToBeRemoved)
+          
+          const updatedCourses = state.courses.map((data) => {
+            if(data.id === itemToBeRemoved.id){
+                return {...data, availableSeats : data.availableSeats + 1 }
+            }
+            // if(data.id === itemToBeRemoved[0].id){ // used [0] to access the filtered array item
+            //     return {...data, availableSeats : data.availableSeats + 1 }
+            // }
+            return data
+          })
+         
+
+        return {
+            cart: filteredItems,
+            courses : updatedCourses
+        }
+    })
+}
+
+
     }
 
 })
